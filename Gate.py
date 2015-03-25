@@ -37,4 +37,4 @@ class Gate(object):
 		self.gate_gets_paid(self,self.coin)
 
 bramka = Gate(2.0)
-bramka.gate_welcomes()
+bramka.gate_welcomes(bramka)
