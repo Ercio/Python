@@ -14,27 +14,27 @@ class Gate(object):
 		gate_informs(self)
 
 	def gate_informs(self):
-		print "Insert " + paid
+		print "Insert " + self.paid
 		put_coin()
 	
         def gate_returns_rest(self,coin):
-                if isinstance(coin, double):
-                        return coin-paid
+                if isinstance(self.coin, double):
+                        return self.coin-self.paid
 
 	def gate_gets_paid(self,coin):
-                if isinstance(coin, double):
-                        if (coin == paid) or (coin > paid):
+                if isinstance(self.coin, double):
+                        if (self.coin == self.paid) or (self.coin > self.paid):
                             print "Enter. "
-                            gate_returns_rest(self,coin)	#zwroc reszte
+                            gate_returns_rest(self,self.coin)	#zwroc reszte
                             open_gate(self)
 
-		elif (coin < paid):
-			print "Insert " + (coin-paid)
-			gate_gets_paid(self,coin-paid)
+		elif (self.coin < self.paid):
+			print "Insert " + (self.coin-self.paid)
+			gate_gets_paid(self,self.coin-self.paid)
 			
         def put_coin(self):
-		coin = input("--> ")
-		gate_gets_paid(self,coin)
+		self.coin = input("--> ")
+		gate_gets_paid(self,self.coin)
 
 bramka = Gate(2.0)
 bramka.gate_welcomes()
