@@ -26,7 +26,7 @@ class Gate(object):
                         if (self.coin == self.paid) or (self.coin > self.paid):
                             print "Enter. "
                             self.gate_returns_rest(self,self.coin)	#zwroc reszte
-                            self.open_gate(self)
+                            self.open_gate()
 
 		elif (self.coin < self.paid):
 			print "Insert " + (self.coin-self.paid)
