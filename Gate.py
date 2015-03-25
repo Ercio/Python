@@ -11,7 +11,7 @@ class Gate(object):
 	def gate_welcomes(self):
                 self.close_gate()
 		print "Welcome."
-		self.gate_informs()
+		self.gate_informs(self)
 
 	def gate_informs(self):
 		print "Insert " + self.paid
