@@ -8,10 +8,9 @@ class Gate(object):
 	def close_gate(self):
 		print "== CLOSED =="
 
-	def gate_welcomes(self):
-                self.close_gate()
-		print "Welcome."
-		self.gate_informs()
+        def put_coin(self):
+		self.coin = input("--> ")
+		self.gate_gets_paid(self,self.coin)
 
 	def gate_informs(self):
 		print "Insert " + self.paid
@@ -31,10 +30,12 @@ class Gate(object):
 		elif (self.coin < self.paid):
 			print "Insert " + (self.coin-self.paid)
 			self.gate_gets_paid(self,self.coin-self.paid)
-			
-        def put_coin(self):
-		self.coin = input("--> ")
-		self.gate_gets_paid(self,self.coin)
+        
+        def gate_welcomes(self):
+                self.close_gate()
+		print "Welcome."
+		self.gate_informs()
+                
 
 bramka = Gate(2.0)
 bramka.gate_welcomes()
