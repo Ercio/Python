@@ -9,7 +9,7 @@ class Gate(object):
 		print "== CLOSED =="
 
         def put_coin(self):
-		coin = input("--> ")
+		coin = float(input("--> "))
 		self.gate_gets_paid(coin)
 
 	def gate_informs(self):
@@ -22,14 +22,18 @@ class Gate(object):
 
 	def gate_gets_paid(self,coin):
                 if isinstance(coin, float):
-                        if (coin == self.paid) or (coin > self.paid):
+                        if (coin > self.paid):
                             print "Please, take the rest: " + str(self.gate_returns_rest(coin))
 			    print "Enter. "
                             self.open_gate()
 
-			elif (coin < self.paid):
-				print "Insert " + str(coin-(self.paid))
-				self.gate_gets_paid(coin-self.paid)
+			elif (coin == self.paid):
+			    print "Enter. "
+			    self.open_gate()
+
+			elif (coin > 0 & coin < self.paid):
+				print "Insert " + str((self.paid)-coin)
+#				self.gate_gets_paid(coin-self.paid)
         
         def gate_welcomes(self):
                 self.close_gate()
