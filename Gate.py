@@ -32,8 +32,9 @@ class Gate(object):
 			    self.open_gate()
 
 			elif (coin > 0 & coin < self.paid):
-				print "Insert " + str((self.paid)-coin)
-#				self.gate_gets_paid(coin-self.paid)
+				while (self.paid-coin > 0):
+				   print "Insert " + str((self.paid)-coin)
+				   self.gate_gets_paid(coin-self.paid)
         
         def gate_welcomes(self):
                 self.close_gate()
