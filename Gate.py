@@ -13,7 +13,7 @@ class Gate(object):
 		self.gate_gets_paid(self,self.coin)
 
 	def gate_informs(self):
-		print "Insert " + (self.paid)
+		print "Insert " + paid
 		self.put_coin()
 	
         def gate_returns_rest(self,coin):
