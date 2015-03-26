@@ -17,14 +17,14 @@ class Gate(object):
 		self.put_coin()
 	
         def gate_returns_rest(self,coin):
-                if isinstance(self.coin, double):
+                if isinstance(coin, double):
                         return coin-self.paid
 
 	def gate_gets_paid(self,coin):
-                if isinstance(self.coin, double):
-                        if (self.coin == self.paid) or (self.coin > self.paid):
+                if isinstance(coin, double):
+                        if (coin == self.paid) or (coin > self.paid):
                             print "Enter. "
-                            self.gate_returns_rest(self,self.coin)
+                            self.gate_returns_rest(self,coin)
                             self.open_gate()
 
 		elif (self.coin < self.paid):
