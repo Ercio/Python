@@ -23,13 +23,13 @@ class Gate(object):
 	def gate_gets_paid(self,coin):
                 if isinstance(coin, float):
                         if (coin == self.paid) or (coin > self.paid):
-                            print "Enter. "
-                            self.gate_returns_rest(self,coin)
+                            print "Please, take the rest: " + str(self.gate_returns_rest(coin))
+			    print "Enter. "
                             self.open_gate()
 
 			elif (coin < self.paid):
-				print "Insert " + (coin-self.paid)
-				self.gate_gets_paid(self,coin-self.paid)
+				print "Insert " + str(coin-(self.paid))
+				self.gate_gets_paid(coin-self.paid)
         
         def gate_welcomes(self):
                 self.close_gate()
