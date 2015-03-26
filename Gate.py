@@ -9,22 +9,22 @@ class Gate(object):
 		print "== CLOSED =="
 
         def put_coin(self):
-		self.coin = input("--> ")
-		self.gate_gets_paid(self,self.coin)
+		coin = input("--> ")
+		self.gate_gets_paid(self, coin)
 
 	def gate_informs(self):
-		print "Insert " + paid
+		print "Insert " + str(self.paid)
 		self.put_coin()
 	
         def gate_returns_rest(self,coin):
                 if isinstance(self.coin, double):
-                        return self.coin-self.paid
+                        return coin-self.paid
 
 	def gate_gets_paid(self,coin):
                 if isinstance(self.coin, double):
                         if (self.coin == self.paid) or (self.coin > self.paid):
                             print "Enter. "
-                            self.gate_returns_rest(self,self.coin)	#zwroc reszte
+                            self.gate_returns_rest(self,self.coin)
                             self.open_gate()
 
 		elif (self.coin < self.paid):
