@@ -22,7 +22,7 @@ class Gate(object):
 
 	def gate_gets_paid(self,price,coin):
 		self.paid = price
-                if isinstance(coin, float):
+                if (isinstance(coin, float) and isinstance(price, float)):
                         if (coin > self.paid):
                             print "Please, take the rest: " + str(self.gate_returns_rest(coin))
 			    print "Enter. "
