@@ -10,7 +10,7 @@ class Gate(object):
 
         def put_coin(self):
 		coin = float(input("--> "))
-		self.gate_gets_paid(coin)
+		self.gate_gets_paid(self.paid,coin)
 
 	def gate_informs(self):
 		print "Insert " + str(self.paid)
@@ -20,7 +20,8 @@ class Gate(object):
                 if isinstance(coin, float):
                         return coin-self.paid
 
-	def gate_gets_paid(self,coin):
+	def gate_gets_paid(self,price,coin):
+		self.paid = price
                 if isinstance(coin, float):
                         if (coin > self.paid):
                             print "Please, take the rest: " + str(self.gate_returns_rest(coin))
@@ -34,8 +35,8 @@ class Gate(object):
 			elif (coin > 0 and coin < self.paid):
 				while (self.paid-coin > 0):
 				   print "Insert " + str((self.paid)-coin)
-				   coin = float(input("--> "))
-#				   self.gate_gets_paid(self.paid-coin)
+				   new_coin = float(input("--> "))
+				   self.gate_gets_paid(self.paid-coin,new_coin)
         
         def gate_welcomes(self):
                 self.close_gate()
