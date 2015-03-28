@@ -3,6 +3,6 @@ import Gate
 
 class GateTests(unittest.TestCase):
 	def testGate(self):
-		self.gate_welcomes()
+		self.assertTrue(Gate(2.0).gate_welcomes())
 
-	def assertPaid():
+	def assertPaid(self):
