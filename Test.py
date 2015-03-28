@@ -8,3 +8,4 @@ class GateTests(unittest.TestCase):
 		self.assertTrue(gate.gate_welcomes())
 
 	def assertPaid(self):
+		self.assertEqual(gate.paid, 2.0)
