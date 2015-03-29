@@ -10,7 +10,7 @@ class Gate(object):
 
         def put_coin(self):
 		coin = float(input("--> "))
-		self.gate_gets_paid((round(self.paid,coin),2))
+		self.gate_gets_paid(self.paid,coin)
 
 	def gate_informs(self):
 		print "Insert " + str(self.paid)
