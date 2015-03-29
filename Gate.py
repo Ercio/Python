@@ -32,8 +32,9 @@ class Gate(object):
 			    print "Enter. "
 			    self.open_gate()
 
-			elif (round(coin,2) > 0 and round(coin,2) < round(self.paid,2)):
-				while (round((self.paid-coin),2) > 0):
+			#wg Buczy problem jest z ponizszym warunkiem
+			elif (round(coin,2) > 1e-15 and round(coin,2) < round(self.paid,2)):
+				while (round((self.paid-coin),2) > 1e-15):
 				   print "Insert " + str((self.paid)-coin)
 				   new_coin = float(input("--> "))
 				   self.gate_gets_paid(self.paid-coin,new_coin)
