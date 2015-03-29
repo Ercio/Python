@@ -18,7 +18,7 @@ class Gate(object):
 	
         def gate_returns_rest(self,coin):
                 if isinstance(coin, float):
-                        return round(((coin-self.paid),2))
+                        return (coin-self.paid)
 
 	def gate_gets_paid(self,price,coin):
 		self.paid = price
