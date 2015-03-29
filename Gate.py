@@ -10,33 +10,33 @@ class Gate(object):
 
         def put_coin(self):
 		coin = float(input("--> "))
-		self.gate_gets_paid(self.paid,coin)
+		self.gate_gets_paid(round(self.paid,coin),2)
 
 	def gate_informs(self):
-		print "Insert " + str(self.paid)
+		print "Insert " + str(round(self.paid),2)
 		self.put_coin()
 	
         def gate_returns_rest(self,coin):
                 if isinstance(coin, float):
-                        return coin-self.paid
+                        return round((coin-self.paid),2)
 
 	def gate_gets_paid(self,price,coin):
 		self.paid = price
                 if (isinstance(coin, float) and isinstance(price, float)):
-                        if (coin > self.paid):
-                            print "Please, take the rest: " + str(self.gate_returns_rest(coin))
+                        if (round(coin,2) > round(self.paid,2)):
+                            print "Please, take the rest: " + str(round(self.gate_returns_rest(coin)),2)
 			    print "Enter. "
                             self.open_gate()
 
-			elif (coin == self.paid):
+			elif (round(coin,2) == round(self.paid,2)):
 			    print "Enter. "
 			    self.open_gate()
 
-			elif (coin > 0 and coin < self.paid):
-				while (self.paid-coin > 0):
-				   print "Insert " + str((self.paid)-coin)
+			elif (round(coin,2) > 0 and round(coin,2) < round(self.paid,2)):
+				while (round((self.paid-coin),2) > 0):
+				   print "Insert " + str(round((self.paid)-coin),2)
 				   new_coin = float(input("--> "))
-				   self.gate_gets_paid(self.paid-coin,new_coin)
+				   self.gate_gets_paid(round(self.paid-coin,new_coin),2)
         
         def gate_welcomes(self):
                 self.close_gate()
