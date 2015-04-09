@@ -7,8 +7,8 @@ class GateTests(unittest.TestCase):
 	#def testGate(self):
 	#	self.assertTrue(gate.gate_welcomes())
 
-	def testFailItself(self):
-		self.fail()
+	def assertSelf(self):
+		self.true()
 
 	def assertPaid(self):
 		pay = gate.paid
