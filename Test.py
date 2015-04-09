@@ -1,5 +1,5 @@
 import unittest
-import Gate import Gate
+from Gate import Gate
 
 gate = Gate(2.0)
 
