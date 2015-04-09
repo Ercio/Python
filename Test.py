@@ -13,3 +13,6 @@ class GateTests(unittest.TestCase):
 	def assertPaid(self):
 		pay = gate.paid
 		self.assertEqual(pay, 2.0)
+
+if __name__ == '__main__':
+	unittest.main()
